@@ -22,9 +22,7 @@ const (
 	PolicyDeviceOwnerAuthentication                          Policy = C.LAPolicyDeviceOwnerAuthentication
 	PolicyDeviceOwnerAuthenticationWithBiometrics            Policy = C.LAPolicyDeviceOwnerAuthenticationWithBiometrics
 	PolicyDeviceOwnerAuthenticationWithBiometricsOrCompanion Policy = C.LAPolicyDeviceOwnerAuthenticationWithBiometricsOrCompanion
-	PolicyDeviceOwnerAuthenticationWithBiometricsOrWatch     Policy = C.LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch
 	PolicyDeviceOwnerAuthenticationWithCompanion             Policy = C.LAPolicyDeviceOwnerAuthenticationWithCompanion
-	PolicyDeviceOwnerAuthenticationWithWatch                 Policy = C.LAPolicyDeviceOwnerAuthenticationWithWatch
 )
 
 var (

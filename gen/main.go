@@ -70,7 +70,7 @@ func main() {
 	// clang does not expose availability information in JSON format
 	data := templateData{
 		Errors:   convertEnumConstants(enums["LAError"], "LAError", "Err", "LAErrorTouchIDNotAvailable", "LAErrorTouchIDNotEnrolled", "LAErrorTouchIDLockout", "LAErrorWatchNotAvailable"),
-		Policies: convertEnumConstants(enums["LAPolicy"], "LAPolicy", "Policy", "LAPolicyDeviceOwnerAuthenticationWithWristDetection"),
+		Policies: convertEnumConstants(enums["LAPolicy"], "LAPolicy", "Policy", "LAPolicyDeviceOwnerAuthenticationWithWristDetection", "LAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch", "LAPolicyDeviceOwnerAuthenticationWithWatch"),
 	}
 
 	t, err := template.ParseFiles(*tmplPath)
