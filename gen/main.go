@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"go/format"
 	"log"
 	"os"
 	"os/exec"
@@ -82,7 +83,12 @@ func main() {
 		log.Fatalf("failed to execute template: %v", err)
 	}
 
-	if err := os.WriteFile(*outPath, buf.Bytes(), 0644); err != nil {
+	formatted, err := format.Source(buf.Bytes())
+	if err != nil {
+		log.Fatalf("failed to format generated code: %v", err)
+	}
+
+	if err := os.WriteFile(*outPath, formatted, 0644); err != nil {
 		log.Fatalf("failed to write file: %v", err)
 	}
 
