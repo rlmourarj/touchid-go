@@ -8,20 +8,22 @@ package touchid
 #import <LocalAuthentication/LocalAuthentication.h>
 #include "touchid.h"
 
+// Opaque handle type for type safety at the CGO boundary
+typedef struct touchid_context* LAContextRef;
 
-static inline void* context_init() {
-	return (void*)[[LAContext alloc] init];
+static inline LAContextRef context_init() {
+	return (LAContextRef)[[LAContext alloc] init];
 }
 
-static inline void context_release(void *context) {
+static inline void context_release(LAContextRef context) {
 	[(LAContext *)context release];
 }
 
-static inline void context_invalidate(void *context) {
+static inline void context_invalidate(LAContextRef context) {
 	[(LAContext *)context invalidate];
 }
 
-static inline int context_can_evaluate_policy(void *context, enum LAPolicy policy) {
+static inline int context_can_evaluate_policy(LAContextRef context, enum LAPolicy policy) {
 	LAContext *authContext = (LAContext *)context;
 	NSError *error;
 	if ([authContext canEvaluatePolicy:policy error:&error]) {
@@ -30,7 +32,7 @@ static inline int context_can_evaluate_policy(void *context, enum LAPolicy polic
 	return error.code;
 }
 
-static inline int context_evaluate_policy(void *context, enum LAPolicy policy, char const* reason) {
+static inline int context_evaluate_policy(LAContextRef context, enum LAPolicy policy, char const* reason) {
 	LAContext *authContext = (LAContext *)context;
 	dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 	__block int ret;
@@ -79,6 +81,6 @@ func CanAuthenticate(policy Policy) error {
 	return canAuthenticate(authContext, policy)
 }
 
-func canAuthenticate(authContext unsafe.Pointer, policy Policy) error {
+func canAuthenticate(authContext C.LAContextRef, policy Policy) error {
 	return errorFromCode(C.context_can_evaluate_policy(authContext, C.enum_LAPolicy(policy)))
 }
