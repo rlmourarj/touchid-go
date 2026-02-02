@@ -6,6 +6,7 @@ package touchid
 #cgo CFLAGS: -x objective-c -fmodules
 #cgo LDFLAGS: -framework LocalAuthentication
 #import <LocalAuthentication/LocalAuthentication.h>
+#include "touchid.h"
 */
 import "C"
 
@@ -46,6 +47,8 @@ var (
 
 func errorFromCode(code C.int) error {
 	switch code {
+	case C.TOUCHID_SUCCESS:
+		return nil
 	case C.LAErrorAppCancel:
 		return ErrAppCancel
 	case C.LAErrorAuthenticationFailed:
